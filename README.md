@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![simpletweet1](https://user-images.githubusercontent.com/81489476/155181428-37dbd1d4-6e53-42c1-b1cb-59bd1017c55f.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/81489476/155827061-24245099-d557-4ba6-8d1c-e6b886a35097.gif)
 
 ## Notes
 
