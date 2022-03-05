@@ -37,4 +37,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constrainedWidth="true"
         tools:text="I like cheese so much that I am willing to write this long sentence out to explain my love for cheese." />
+
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tvTweetBody"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

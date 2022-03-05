@@ -3,9 +3,12 @@ package com.codepath.apps.restclienttemplate
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.codepath.apps.restclienttemplate.models.Tweet
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -67,6 +70,29 @@ class ComposeActivity : AppCompatActivity() {
                     })
                 }
         }
+
+        val getChar = findViewById<EditText>(R.id.etTweetCompose)
+        val etValue = findViewById<TextView>(R.id.charCount)
+        getChar.addTextChangedListener(object : TextWatcher {
+
+            var limit = 280
+            override fun onTextChanged(s: CharSequence, start: Int, counter: Int, count: Int) {
+                limit += counter
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                limit -= after
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if(limit < 1) {
+                    etValue.text = "Character limit reached"
+                } else {
+                    val total = 280 - limit
+                    etValue.text = total.toString() + "/280"
+                }
+            }
+        })
     }
     companion object {
         val TAG = "ComposeActivity"
